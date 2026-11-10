@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: username_kamu/nama_repositori # Ganti sesuai repo GitHub kamu
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "profile"
+    label: "Data Profil"
+    files:
+      - file: "content/profile.json"
+        label: "Informasi Profil"
+        name: "profile_info"
+        fields:
+          - { label: "Nama Lengkap", name: "name", widget: "string" }
+          - { label: "Role / Profesi", name: "role", widget: "string" }
+          - { label: "Biografi Singkat", name: "bio", widget: "text" }
+          - label: "Daftar Proyek"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Judul Proyek", name: "title", widget: "string" }
+              - { label: "Deskripsi", name: "description", widget: "text" }
+              - { label: "Gambar", name: "image", widget: "image" }
+              - { label: "Link Demo", name: "link", widget: "string" }
